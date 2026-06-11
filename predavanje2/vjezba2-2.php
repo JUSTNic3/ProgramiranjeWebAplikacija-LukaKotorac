@@ -1,5 +1,5 @@
 <?php
-    $naslov = "Skillet - vjezba 1c";
+    $naslov = "Skillet - vjezba 2-2";
     $autor = "Luka Kotorac";
     $opis = "Skillet je američki kršćanski rock sastav osnovan u Memphisu, Tennessee, 1996. godine.";
     $linkInfo = "https://en.wikipedia.org/wiki/Skillet_(band)";
@@ -90,4 +90,4 @@
         </main>
     </body>
 </html>
-<!-- Naziv datoteke: vjezba1c.php -->
+<!-- Naziv datoteke: vjezba2-2.php -->

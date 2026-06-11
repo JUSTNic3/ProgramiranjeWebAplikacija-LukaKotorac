@@ -1,5 +1,5 @@
 <?php
-    $naslov = "Skillet - vjezba 1d";
+    $naslov = "Skillet - vjezba 2-3";
     $autor = "Luka Kotorac";
     $opis = "Skillet je američki kršćanski rock sastav osnovan u Memphisu, Tennessee, 1996. godine.";
     
@@ -123,7 +123,7 @@
       <p><?php echo h($opis); ?></p>
     <?php endif; ?>
 
-    <form method="get" action="vjezba1d.php">
+    <form method="get" action="">
       <fieldset>
         <legend>Odaberi temu</legend>
         <label><input type="radio" name="tema" value="dark"  <?php echo $temaKey==="dark" ? "checked" : ""; ?>>Dark</label>
@@ -144,7 +144,7 @@
 
       <div class="row" style="margin-top:10px">
         <button class="btn" type="submit">Primijeni odabir</button>
-        <a class="btn" href="vjezba1c.php">Natrag na vježba 1c</a>
+        <a class="btn" href="vjezba2-2.php">Natrag na vježba 2-2</a>
       </div>
     </form>
 
@@ -152,4 +152,4 @@
   </main>
 </body>
 </html>
-<!-- Naziv datoteke: vjezba1d.php -->
+<!-- Naziv datoteke: vjezba2-3.php -->
