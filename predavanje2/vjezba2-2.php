@@ -3,7 +3,7 @@
     $autor = "Luka Kotorac";
     $opis = "Skillet je američki kršćanski rock sastav osnovan u Memphisu, Tennessee, 1996. godine.";
     $linkInfo = "https://en.wikipedia.org/wiki/Skillet_(band)";
-    $linkNatrag = "vjezba1b.php";
+    $linkNatrag = "vjezba2-1.php";
     $link_text = "Saznaj više o Skillet-u";
 ?>
 
@@ -84,7 +84,7 @@
             <p><?php echo ($opis)?></p>
             <div class="row">
                 <a class="btn" href="<?php echo $linkInfo; ?>" target="_blank">Saznaj više o Skillet-u</a>
-                <a class="btn" href="<?php echo $linkNatrag; ?>">Natrag na vježba 1b</a>
+                <a class="btn" href="<?php echo $linkNatrag; ?>">Natrag na vježba 2-1</a>
             </div>
             <p class="muted">&copy; <?php echo date('Y'); ?> — Demo za PHP</p>
         </main>

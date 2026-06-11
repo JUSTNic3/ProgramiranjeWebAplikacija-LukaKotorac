@@ -144,7 +144,7 @@
 
       <div class="row" style="margin-top:10px">
         <button class="btn" type="submit">Primijeni odabir</button>
-        <a class="btn" href="vjezba2-2.php">Natrag na vježba 2-2</a>
+        <a class="btn" href="">Natrag na vježba 2-2</a>
       </div>
     </form>
 

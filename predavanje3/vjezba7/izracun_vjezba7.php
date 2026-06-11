@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Vjezba 7 - izračun ocjene</title>
-        <meta name="description" content="vjezba 6">
+        <meta name="description" content="vjezba 7">
         <style>
             body{ 
                 font-family: 'Open Sans Condensed'; 
