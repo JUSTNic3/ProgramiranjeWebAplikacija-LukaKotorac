@@ -270,6 +270,61 @@ footer {
     opacity: 0.9;
 }
 
+.form-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-link a {
+    color: #397733;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    color: #397733;
+    margin-bottom: 20px;
+}
+
+.admin-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-form input,
+.admin-form textarea {
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    font-family: inherit;
+}
+
+.admin-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.admin-form input[type="submit"] {
+    background-color: #397733;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-form input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.admin-form h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
 
 @media (max-width: 900px) {
 

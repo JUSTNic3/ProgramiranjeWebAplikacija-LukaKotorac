@@ -1,41 +1,30 @@
 <?php
-print'<section class="news-section">
 
+$query = "SELECT * FROM reviews ORDER BY rating DESC";
+$result = mysqli_query($conn, $query);
+
+print '<section class="news-section">
     <h2>OCJENE</h2>
+    <div class="news-grid">';
 
-    <div class="news-grid">
+if (mysqli_num_rows($result) > 0) {
 
+    while ($row = mysqli_fetch_assoc($result)) {
+
+        print '
         <article class="news-card">
-            <img src="images/review1.jpg" alt="">
-            <h3>Frieren</h3>
-            <p>Ocjena: 9/10</p>
-        </article>
+            <img src="img/' . htmlspecialchars($row['image']) . '" alt="' . htmlspecialchars($row['anime_name']) . '">
+            <h3>' . htmlspecialchars($row['anime_name']) . '</h3>
+            <p>Ocjena: ' . htmlspecialchars($row['rating']) . '/10</p>
+        </article>';
+    }
 
-        <article class="news-card">
-            <img src="images/review2.jpg" alt="">
-            <h3>Solo Leveling</h3>
-            <p>Ocjena: 8/10</p>
-        </article>
+} else {
+    print '<p>Trenutno nema ocjena.</p>';
+}
 
-        <article class="news-card">
-            <img src="images/review3.jpg" alt="">
-            <h3>One Piece</h3>
-            <p>Ocjena: 10/10</p>
-        </article>
-
-        <article class="news-card">
-            <img src="images/anime1.jpg" alt="">
-            <h3>Demon Slayer</h3>
-            <p>Ocjena: 9/10</p>
-        </article>
-
-        <article class="news-card">
-            <img src="images/anime2.jpg" alt="">
-            <h3>Attack on Titan</h3>
-            <p>Ocjena: 10/10</p>
-        </article>
-
+print '
     </div>
-
 </section>';
+
 ?>

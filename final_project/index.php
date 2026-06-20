@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+include("db.php");
+
 if(isset($_GET['menu']))
 {
     $menu = (int)$_GET['menu'];
@@ -7,6 +10,15 @@ if(isset($_GET['menu']))
 else
 {
     $menu = 1;
+}
+
+if(isset($_GET['id']))
+{
+    $id = (int)$_GET['id'];
+}
+else
+{
+    $id = 0;
 }
 
 ?>
@@ -52,6 +64,12 @@ elseif($menu == 4)
     include("aboutus.php");
 elseif($menu == 5)
     include("profile.php");
+elseif($menu == 6)
+    include("article.php");
+elseif($menu == 7)
+    include("admin.php");
+elseif($menu == 8)
+    include("register.php");
 else
     include("home.php");
 

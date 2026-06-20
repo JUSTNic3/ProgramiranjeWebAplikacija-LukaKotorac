@@ -1,45 +1,59 @@
 <?php
-    print '<section class="news-section">
-            <h2>NOVOSTI</h2>
 
-            <div class="news-grid">
-                <article class="news-card">
-                    <img src="images/anime1.jpg" alt="">
-                    <h3>New Demon Slayer Movie Breaks Records</h3>
-                </article>
+print '<section class="news-section">
+    <h2>NOVOSTI</h2>
+    <div class="news-grid">';
 
-                <article class="news-card">
-                    <img src="images/anime2.jpg" alt="">
-                    <h3>Attack on Titan Creator Announces New Project</h3>
-                </article>
-                <article class="news-card">
-                    <a href="article.php">
-                    <img src="images/solo-leveling.jpg" alt="">
-                    <h3>Solo Leveling Season 2 Officially Announced</h3>
-                    </a>
-                </article>
-                
-            </div>
-        </section>
+$query_news = "SELECT * FROM news ORDER BY created_at DESC LIMIT 3";
+$result_news = mysqli_query($conn, $query_news);
 
-        <section class="news-section">
-            <h2>OCJENE</h2>
+if (mysqli_num_rows($result_news) > 0) {
 
-            <div class="news-grid">
-                <article class="news-card">
-                    <img src="images/anime3.jpg" alt="">
-                    <h3>Top 10 Anime Releases Coming This Season</h3>
-                </article>
+    while ($row = mysqli_fetch_assoc($result_news)) {
 
-                <article class="news-card">
-                    <img src="images/review2.jpg" alt="">
-                    <h3>Best Anime Soundtracks of the Year</h3>
-                </article>
+        print '
+            <article class="news-card">
+                <a href="index.php?menu=6&id=' . $row['id'] . '">
+                    <img src="img/' . htmlspecialchars($row['image']) . '" alt="' . htmlspecialchars($row['title']) . '">
+                    <h3>' . htmlspecialchars($row['title']) . '</h3>
+                </a>
+            </article>';
+    }
 
-                <article class="news-card">
-                    <img src="images/review3.jpg" alt="">
-                    <h3>Why Frieren Became a Fan Favorite</h3>
-                </article>
-            </div>
-        </section>';
+} else {
+    print '<p>Trenutno nema novosti.</p>';
+}
+
+print '
+    </div>
+</section>';
+
+
+print '<section class="news-section">
+    <h2>OCJENE</h2>
+    <div class="news-grid">';
+
+$query_reviews = "SELECT * FROM reviews ORDER BY id DESC LIMIT 3";
+$result_reviews = mysqli_query($conn, $query_reviews);
+
+if (mysqli_num_rows($result_reviews) > 0) {
+
+    while ($row = mysqli_fetch_assoc($result_reviews)) {
+
+        print '
+        <article class="news-card">
+            <img src="img/' . htmlspecialchars($row['image']) . '" alt="' . htmlspecialchars($row['anime_name']) . '">
+            <h3>' . htmlspecialchars($row['anime_name']) . '</h3>
+            <p>Ocjena: ' . htmlspecialchars($row['rating']) . '/10</p>
+        </article>';
+    }
+
+} else {
+    print '<p>Trenutno nema ocjena.</p>';
+}
+
+print '
+    </div>
+</section>';
+
 ?>
